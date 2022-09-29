@@ -1,0 +1,36 @@
+# covariance of two set.
+import math
+
+# Function to find mean.
+
+
+def mean(arr, x):
+
+	sum = 0
+	for i in range(0, x):
+		sum = sum + arr[i]
+
+	return sum / x
+
+# Function to find covariance.
+
+
+def covariance(arr1, arr2, x):
+
+	sum = 0
+	mean_arr1 = mean(arr1, x)
+	mean_arr2 = mean(arr2, x)
+	for i in range(0, x):
+		sum = (sum + (arr1[i] - mean_arr1) * (arr2[i] - mean_arr2))
+
+	return sum / (x)
+
+
+# Driver method
+arr1 = [65.21, 64.75, 65.26, 65.76, 65.96]
+x = len(arr1)
+arr2 = [67.25, 66.39, 66.12, 65.70, 66.64]
+y = len(arr2)
+
+if (y == x):
+	print(covariance(arr1, arr2, y))
